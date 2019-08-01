@@ -2,30 +2,52 @@ let axios = require("axios");
 let cheerio = require("cheerio");
 let fs = require("fs");
 
-let urls = Array(471).fill().map((_, i) => {
+let urls = Array(520).fill().map((_, i) => {
   // Link de Teste
   // return 'https://www.tripadvisor.com.br/Attraction_Review-g303506-d11840851-Reviews-Centro_de_Visitantes_Paineiras-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html'
 
-  // AquaRio
-  if (i === 0) {
-    return 'https://www.tripadvisor.com.br/Attraction_Review-g303506-d11725544-Reviews-AquaRio-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html'
-  } else {
-    return `https://www.tripadvisor.com.br/Attraction_Review-g303506-d11725544-Reviews-or${i}0-AquaRio-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html`
-  }
+  // AquaRio 472 paginações
+  // if (i === 0) {
+  //   return 'https://www.tripadvisor.com.br/Attraction_Review-g303506-d11725544-Reviews-AquaRio-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html'
+  // } else {
+  //   return `https://www.tripadvisor.com.br/Attraction_Review-g303506-d11725544-Reviews-or${i}0-AquaRio-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html`
+  // }
 
-  // Paineiras
+  // Paineiras 101 paginações
   // if (i === 0) {
   //   return 'https://www.tripadvisor.com.br/Attraction_Review-g303506-d11840851-Reviews-Centro_de_Visitantes_Paineiras-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html'
   // } else {
   //   return `https://www.tripadvisor.com.br/Attraction_Review-g303506-d11840851-Reviews-or${i}0-Centro_de_Visitantes_Paineiras-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html`
   // }
 
-  // RioZoo
+  // RioZoo 78 páginações
   // if (i === 0) {
   //   return 'https://www.tripadvisor.com.br/Attraction_Review-g303506-d2352236-Reviews-RioZoo_Rio_de_Janeiro_s_Zoo-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html'
   // } else {
   //   return `https://www.tripadvisor.com.br/Attraction_Review-g303506-d2352236-Reviews-or${i}0-RioZoo_Rio_de_Janeiro_s_Zoo-Rio_de_Janeiro_State_of_Rio_de_Janeiro.html`
   // }
+
+  // Cataratas - 4214 páginações
+  // if (i === 0) {
+  //   return 'https://www.tripadvisor.com.br/Attraction_Review-g303444-d312332-Reviews-Iguazu_Falls-Foz_do_Iguacu_State_of_Parana.html'
+  // } else {
+  //   return `https://www.tripadvisor.com.br/Attraction_Review-g303444-d312332-Reviews-or${i}0-Iguazu_Falls-Foz_do_Iguacu_State_of_Parana.html`
+  // }
+  
+  // Marco - 520 páginações
+  if (i === 0) {
+    return 'https://www.tripadvisor.com.br/Attraction_Review-g303444-d318353-Reviews-Marco_Das_Tres_Fronteiras-Foz_do_Iguacu_State_of_Parana.html'
+  } else {
+    return `https://www.tripadvisor.com.br/Attraction_Review-g303444-d318353-Reviews-or${i}0-Marco_Das_Tres_Fronteiras-Foz_do_Iguacu_State_of_Parana.html`
+  }
+
+  // Noronha - 127 páginações
+  // if (i === 0) {
+  //   return 'https://www.tripadvisor.com.br/Attraction_Review-g616328-d2520869-Reviews-Fernado_de_Noronha_Island-Fernando_de_Noronha_State_of_Pernambuco.html#REVIEWS'
+  // } else {
+  //   return `https://www.tripadvisor.com.br/Attraction_Review-g616328-d2520869-Reviews-or$[i}0-Fernado_de_Noronha_Island-Fernando_de_Noronha_State_of_Pernambuco.html`
+  // }
+  
 });
 
 Promise.all(urls.map(extractData)).then(allResults => {
