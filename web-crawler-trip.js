@@ -28,11 +28,11 @@ let urls = Array(520).fill().map((_, i) => {
   // }
 
   // Cataratas - 4214 páginações
-  // if (i === 0) {
-  //   return 'https://www.tripadvisor.com.br/Attraction_Review-g303444-d312332-Reviews-Iguazu_Falls-Foz_do_Iguacu_State_of_Parana.html'
-  // } else {
-  //   return `https://www.tripadvisor.com.br/Attraction_Review-g303444-d312332-Reviews-or${i}0-Iguazu_Falls-Foz_do_Iguacu_State_of_Parana.html`
-  // }
+  if (i === 0) {
+    return 'https://www.tripadvisor.com.br/Attraction_Review-g303444-d312332-Reviews-Iguazu_Falls-Foz_do_Iguacu_State_of_Parana.html'
+  } else {
+    return `https://www.tripadvisor.com.br/Attraction_Review-g303444-d312332-Reviews-or${i}0-Iguazu_Falls-Foz_do_Iguacu_State_of_Parana.html`
+  }
   
   // Marco - 520 páginações
   if (i === 0) {
@@ -42,11 +42,11 @@ let urls = Array(520).fill().map((_, i) => {
   }
 
   // Noronha - 127 páginações
-  // if (i === 0) {
-  //   return 'https://www.tripadvisor.com.br/Attraction_Review-g616328-d2520869-Reviews-Fernado_de_Noronha_Island-Fernando_de_Noronha_State_of_Pernambuco.html#REVIEWS'
-  // } else {
-  //   return `https://www.tripadvisor.com.br/Attraction_Review-g616328-d2520869-Reviews-or$[i}0-Fernado_de_Noronha_Island-Fernando_de_Noronha_State_of_Pernambuco.html`
-  // }
+  if (i === 0) {
+    return 'https://www.tripadvisor.com.br/Attraction_Review-g616328-d2520869-Reviews-Fernado_de_Noronha_Island-Fernando_de_Noronha_State_of_Pernambuco.html#REVIEWS'
+  } else {
+    return `https://www.tripadvisor.com.br/Attraction_Review-g616328-d2520869-Reviews-or$[i}0-Fernado_de_Noronha_Island-Fernando_de_Noronha_State_of_Pernambuco.html`
+  }
   
 });
 
